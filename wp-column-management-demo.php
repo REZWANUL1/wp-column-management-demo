@@ -40,21 +40,14 @@ function wp_column_posts_data($column, $post_id)
          echo 'No thumbnail available';
       }
    } elseif ($column == 'word_count') {
-      $_post = get_post($post_id);
-      $content = $_post->post_content;
-      $word_count = str_word_count(strip_tags($content));
+      // $_post = get_post($post_id);
+      // $content = $_post->post_content;
+      // $word_count = str_word_count(strip_tags($content));
+      $word_count = get_post_meta($post_id, 'wordn', true);
       esc_html_e($word_count);
    }
 }
-//? add sortable function
-add_filter('manage_edit-post_sortable_columns', 'code_column_sortable');
-function code_column_sortable($columns)
-{
-   $columns['word_count'] = 'wordn';
-   return $columns;
-}
 
-
-
+require('inc/post_word_count_sortable.php');
 
 require('inc/page_column.php');

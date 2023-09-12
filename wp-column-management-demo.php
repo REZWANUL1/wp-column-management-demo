@@ -47,7 +47,7 @@ function wp_column_posts_data($column, $post_id)
       esc_html_e($word_count);
    }
 }
-
+require('inc/wordcount_filter.php');
 require('inc/custom_sorting.php');
 require('inc/image_sorting.php');
 require('inc/post_word_count_sortable.php');

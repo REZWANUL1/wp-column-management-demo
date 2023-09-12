@@ -48,6 +48,6 @@ function wp_column_posts_data($column, $post_id)
    }
 }
 
+require('inc/custom_sorting.php');
 require('inc/post_word_count_sortable.php');
-
 require('inc/page_column.php');
